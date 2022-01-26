@@ -59,9 +59,9 @@ Insira o hash na ferramenta para que possa ser feito a identificação do Hash u
 
 Conhecendo que bcrypt é o hash utilizado. Vamos agora usar a ferramenta hashcat, lembrando que não se deve usar --force no comando, isso pode gerar um falso positivo.
 
-A função para o hashcat - 'hashcat -m [valor] [arquivo.txt] [caminho do rocktyou.txt]'
+A função para o hashcat - *hashcat -m [valor] [arquivo.txt] [caminho do rocktyou.txt]*
 
-Vamos descobrir qual o valor que é necessário ser inserido na função. Para isso usaremos o comando - 'hashcat -h | grep -e "bcrypt"', assim podes saber o valor para o hash que desejamos.
+Vamos descobrir qual o valor que é necessário ser inserido na função. Para isso usaremos o comando - *hashcat -h | grep -e "bcrypt*, assim podes saber o valor para o hash que desejamos.
 
 <img src = "https://github.com/patrickpca/TryHackMe/blob/master/Hashing%20-%20Crypto%20101/IMG/img2.PNG" width="80%">
 
@@ -69,7 +69,7 @@ Encontrado o valor de 3200.
 
 Criar um arquivo hash.txt com o valor da hash da questão.
 
-execute o comando acima. Vai ficar parecido com isso - 'hashcat -m 3200 hash1.txt /usr/share/wordlists/rockyou.txt'
+execute o comando acima. Vai ficar parecido com isso - *hashcat -m 3200 hash1.txt /usr/share/wordlists/rockyou.txt*
 
 <img src = "https://github.com/patrickpca/TryHackMe/blob/master/Hashing%20-%20Crypto%20101/IMG/img3.PNG" width="80%">
 
@@ -81,7 +81,7 @@ Podemos finalizar essa questão com uma única pesquisa no site "https://hashes.
 
 <img src = "https://github.com/patrickpca/TryHackMe/blob/master/Hashing%20-%20Crypto%20101/IMG/img4.PNG" width="80%"> 
 
-O método da questão anterior tão se aplica aqui, so repetir o processo descrito. - o comando no Kali fica 'hashcat -m 1400 hash1.txt /usr/share/wordlists/rockyou.txt'
+O método da questão anterior tão se aplica aqui, so repetir o processo descrito. - o comando no Kali fica *hashcat -m 1400 hash1.txt /usr/share/wordlists/rockyou.txt'*
 (Lembre de mudar o conteúdo do hash1.txt para o hash da questão)
 
   ## Questão - Crack this hash: $6$GQXVvW4EuM$ehD6jWiMsfNorxy5SINsgdlxmAEl3.yif0/c3NqzGLa0P.S7KRDYjycw5bnYkF5ZtB8wQy8KnskuWQS3Yr1wQ0
@@ -93,3 +93,18 @@ Aqui usaremos novamente o site para analisar o hash e o procedimento com o kali 
      Resposta - funforyou
 
 Aqui teremos dificuldade em executar o comando no Kali já que o rocktyou.txt não atende os requisitos da hash. Por fim, o site descrito anteriormente consegue facilmente resolver.
+
+# Task 6
+  
+  ## Questão - What's the SHA1 sum for the amd64 Kali 2019.4 ISO? http://old.kali.org/kali-images/kali-2019.4/
+    Resposta - 186c5227e24ceb60deb711f1bdc34ad9f4718ff9  
+
+Necessário apenas um pouco de pesquisa no site informado para achar a hash. 
+Clique no primeiro arquivo chamado "SHA1SUMS" e a primeira hash que aparece é a flag.
+
+  ## Questão - What's the hashcat mode number for HMAC-SHA512 (key = $pass)?
+    Resposta - 1750
+
+O comando *hashcat -h | grep -e "HMAC-SHA512"* será suficiente para encontrar a resposta necessária. 
+
+<img src = "https://github.com/patrickpca/TryHackMe/blob/master/Hashing%20-%20Crypto%20101/IMG/img5.PNG" width="80%">
