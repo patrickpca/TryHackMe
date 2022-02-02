@@ -23,3 +23,43 @@
 
 ##### Questão - What is the system variable for the Windows folder?
 ##### Resposta - `%windir%`
+
+
+#### Task 6
+
+##### Questão - What is the name of the other user account?
+##### Resposta - `tryhackmebilly`
+
+##### Questão - What groups is this user a member of?
+##### Resposta - `Remote Desktop Users,Users`
+
+##### Questão - What built-in account is for guest access to the computer?
+##### Resposta - `guest`
+
+##### Questão - What is the account status?
+##### Resposta - `account is disabled`
+
+  
+#### Task 7
+
+##### Questão - What does UAC mean?
+##### Resposta - `user account control`
+
+
+#### Task 8
+
+##### Questão - In the Control Panel, change the view to Small icons. What is the last setting in the Control Panel view?
+##### Resposta - `windows defender firewall`
+
+
+#### Task 8
+
+##### Questão - What is the keyboard shortcut to open Task Manager?
+##### Resposta - `ctrl+shift+esc`
+
+
+
+
+
+
+
